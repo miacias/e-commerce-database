@@ -23,7 +23,8 @@ Product.init(
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
-        is: /^(0(?!\.00)|[1-9]\d{0,6})\.\d{2}$/
+        isDecimal: true,
+        // is: /^(0(?!\.00)|[1-9]\d{0,6})\.\d{2}$/
       }
     },
     stock: {
@@ -43,25 +44,6 @@ Product.init(
     }
   },
   {
-    // hooks: {
-    //   beforeCreate: async (newPrice) => {
-    //     // https://stackoverflow.com/questions/35130115/regex-for-price-requiring-decimal-point-and-2-decimal-places
-    //     const pass = newPrice.match(/^(0(?!\.00)|[1-9]\d{0,6})\.\d{2}$/);
-    //     if (pass) {
-    //       return newPrice;
-    //     } else {
-    //       return console.log("Price decimal incorrect.")
-    //     }
-    //   },
-    //   beforeUpdate: async (updatedPrice) => {
-    //     const pass = updatedPrice.match(/^(0(?!\.00)|[1-9]\d{0,6})\.\d{2}$/);
-    //     if (pass) {
-    //       return updatedPrice;
-    //     } else {
-    //       return console.log("Price decimal incorrect.")
-    //     }
-    //   }
-    // },
     sequelize,
     timestamps: false,
     freezeTableName: true,

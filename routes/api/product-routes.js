@@ -3,21 +3,45 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   // find all products
-  // be sure to include its associated Category and Tag data
+  try {
+    const allProducts = await Product.findAll({
+      include: [{ model: Category }, { model: Tag }] // includes associated Category and Tag data
+    });
+    res.status(200).json(allProducts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-// get one product
-router.get('/:id', (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+router.get('/:id', async (req, res) => {
+  // find product by ID
+  try {
+    const oneProduct = await Product.findByPk(req.params.id, {
+      include: [{ model: Category }, { model: Tag }] // includes associated products
+    });
+    if (!oneProduct) {
+      res.status(404).json({message: "No product found with that ID."});
+      return;
+    }
+    res.status(200).json(oneProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // create new product
 router.post('/', (req, res) => {
-  /* req.body should look like this...
+  // try {
+  //   const newProduct = await Product.create(req.body, {
+  //     include: [{ model: Category }, { model: Tag }] // includes associated products
+  //   });
+  //   res.status(200).json(newProduct);
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+  /* TEST: req.body
     {
       product_name: "Basketball",
       price: 200.00,
@@ -89,8 +113,23 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  // delete one product by its `id` value
+router.delete('/:id', async (req, res) => {
+  // delete one product by ID
+  try {
+    const deleteProduct = await Product.destroy({
+      where: {
+        id: req.params.id
+      },
+      include: [{ model: Category }, { model: Tag }] // includes associated products
+    });
+    if (!deleteProduct) {
+      res.status(404).json({message: "No product found with that ID."});
+      return;
+    }
+    res.status(200).json(deleteProduct);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
