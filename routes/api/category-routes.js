@@ -21,6 +21,10 @@ router.get('/:id', async (req, res) => {
     const oneCategory = await Category.findByPk(req.params.id, {
       include: [{model: Product}] // includes associated products
     });
+    if (!oneCategory) {
+      res.status(404).json({message: "No category found with that ID."});
+      return;
+    }
     res.status(200).json(oneCategory);
   } catch (err) {
     res.status(500).json(err);
@@ -31,7 +35,7 @@ router.post('/', async (req, res) => {
   // create new category
   try {
     const newCategory = await Category.create(req.body, {
-      include: [{model: Product}] // includes associated products
+      include: [{ model: Product }] // includes associated products
     });
     res.status(200).json(newCategory);
   } catch (err) {
@@ -63,6 +67,10 @@ router.delete('/:id', async (req, res) => {
       },
       include: [{model: Product}] // includes associated products
     });
+    if (!deleteCategory) {
+      res.status(404).json({message: "No category found with that ID."});
+      return;
+    }
     res.status(200).json(deleteCategory);
   } catch (err) {
     res.status(500).json(err);
