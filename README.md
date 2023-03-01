@@ -78,7 +78,7 @@ U. Penn Bootcamp instructor(s):
 
 U. Penn Bootcamp study groups:
 
-- [Josh Eflin](https://github.com/JoshEflin)
+- [Josh Eflin](https://github.com/JoshEflin) - reviewed API Express routes
 
 ## License
   
