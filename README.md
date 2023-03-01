@@ -61,14 +61,14 @@ Documentation referenced:
 
 Tools used:
 
-- VS Code
-- Node.js
-- MySQL
-- MySQL2 package
-- dotenv package
-- Sequelize package
-- Express package
-- Nodemon package
+- [VS Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/en/)
+- [MySQL](https://www.mysql.com/)
+- [MySQL2 package](https://www.npmjs.com/package/mysql2)
+- [dotenv package](https://www.npmjs.com/package/dotenv)
+- [Sequelize package](https://sequelize.org/)
+- [Express package](https://expressjs.com/)
+- [Nodemon package](https://www.npmjs.com/package/nodemon)
 
 U. Penn Bootcamp instructor(s): 
 
