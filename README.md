@@ -1,5 +1,5 @@
 # E-Commerce-Database
-secure back-end Sequelize database managing user accounts and commercial products
+Secure back-end Sequelize database managing commercial products
 
 ## Description
 
