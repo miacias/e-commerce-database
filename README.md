@@ -52,3 +52,36 @@ No testing provided at this time.
 
 
 ## Credits
+
+Documentation referenced:
+
+- Mozilla Development Network
+- Stack Overflow forums
+- Sequelize
+
+Tools used:
+
+- VS Code
+- Node.js
+- MySQL
+- MySQL2 package
+- dotenv package
+- Sequelize package
+- Express package
+- Nodemon package
+
+U. Penn Bootcamp instructor(s): 
+
+- [Dan Gross](https://github.com/DanielWGross)
+- [Andrew Hojnowski](https://github.com/aHojo)
+- [C. Ross King](https://github.com/RomeoKilo125/)
+
+U. Penn Bootcamp study groups:
+
+- [Josh Eflin](https://github.com/JoshEflin)
+
+## License
+  
+MIT
+
+[![License](https://img.shields.io/badge/license-MIT-blue?logo=github)](https://github.com/miacias/e-commerce-database/blob/main/LICENSE)
