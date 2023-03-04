@@ -70,6 +70,10 @@ Tools used:
 - [Express package](https://expressjs.com/)
 - [Nodemon package](https://www.npmjs.com/package/nodemon)
 
+Tutor(s):
+
+- [Patrick Meehan](https://github.com/Meehan-007) - many-to-many Sequelize associations
+
 U. Penn Bootcamp instructor(s): 
 
 - [Dan Gross](https://github.com/DanielWGross)
